@@ -1,21 +1,15 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: goldboot-action
+description: Build goldboot images with CI
+author: Tyler Cook
 
-# Define your inputs here.
 inputs:
-  who-to-greet:
-    description: 'Your input description here'
+  output:
+    description: The destination image path
     required: true
-    default: 'World'
-
-# Define your outputs here.
-outputs:
-  greeting:
-    description: 'Your output description here'
+    default: image.gb
 
 runs:
   using: docker
   image: Dockerfile
   env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+    INPUT_OUTPUT_FILE: /github/workspace/${{ inputs.output }}

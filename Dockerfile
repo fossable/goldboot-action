@@ -1,10 +1,9 @@
-# Set the base image to use for subsequent instructions
-FROM alpine:3.19
+FROM debian:slim
 
-# Set the working directory inside the container
+# Install dependencies
+RUN apt-get update && apt-get install -y qemu-system-x86
+
 WORKDIR /usr/src
-
-# Copy any source file(s) required for the action
 COPY entrypoint.sh .
 
 # Configure the container to be run as an executable

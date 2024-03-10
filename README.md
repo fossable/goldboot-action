@@ -9,7 +9,7 @@ steps:
     uses: actions/checkout@v4
 
   - name: Build goldboot image
-    uses: fossable/goldboot-action@master
+    uses: fossable/goldboot-action@main
     with:
       config-path: goldboot.json
       output-path: image.gb

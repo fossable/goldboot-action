@@ -1,7 +1,4 @@
-FROM debian:slim
-
-# Install dependencies
-RUN apt-get update && apt-get install -y qemu-system-x86
+FROM fossable/goldboot:latest
 
 WORKDIR /usr/src
 COPY entrypoint.sh .

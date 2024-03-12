@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-goldboot cast --output $OUTPUT_PATH --path $CONFIG_PATH
+goldboot cast --output $OUTPUT $CONTEXT

@@ -3,11 +3,11 @@ description: Build goldboot images with CI
 author: Tyler Cook
 
 inputs:
-  output-path:
+  output:
     description: The destination image path (relative to the CI workspace)
     required: true
     default: image.gb
-  config-path:
+  context:
     description: The directory path containing a goldboot config (relative to the CI workspace)
     required: true
     default: .
@@ -20,6 +20,6 @@ runs:
   using: docker
   image: Dockerfile
   env:
-    OUTPUT_PATH: /github/workspace/${{ inputs.output-path }}
-    CONFIG_PATH: /github/workspace/${{ inputs.config-path }}
+    OUTPUT: /github/workspace/${{ inputs.output }}
+    CONTEXT: /github/workspace/${{ inputs.context }}
     RUST_LOG: ${{ inputs.log-level }}
